@@ -3,11 +3,14 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
+import { AlertComponent } from './_components';
+import { HomeComponent } from './home';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -15,7 +18,9 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlertComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +38,13 @@ export function createTranslateLoader(http: HttpClient) {
   }),
     AppRoutingModule,
 ],
-  providers: [],
-  bootstrap: [AppComponent]
+providers: [
+  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+  // provider used to create fake backend
+  fakeBackendProvider
+],
+bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { };
