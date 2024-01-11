@@ -1,0 +1,104 @@
+[
+  {
+    "description": "Need the ability to open an account directly from your systems? We have the right system for you.",
+    "documentation": [
+      {
+        "title": "Doc Title 1",
+        "description": "<div><p>Description</p></div>"
+      }
+    ],
+    "id": "1",
+    "image": "../assets/images/logo.png",
+    "shortdescription": "",
+    "title": "Account Opening",
+    "slug": "accountopening",
+    "trialdetails": "10 calls per day",
+    "routerLink": "accountopening",
+    "pricing": "KES 150 per created account"
+  },
+  {
+    "description": "Need a way to systematically consolidate all your goods purchase payments.",
+    "documentation": [
+      {
+        "title": "Doc Title 1",
+        "description": "<div><p>Description</p></div>"
+      }
+    ],
+    "id": "2",
+    "image": "../assets/images/logo.png",
+    "shortdescription": "",
+    "title": "Buy Goods",
+    "slug": "buygoods",
+    "trialdetails": "1000 calls per day",
+    "routerLink": "buygoods",
+    "pricing": "KES 3 per submission"
+  },
+  {
+    "description": "Need a credit management system dynamically managed using APIs.",
+    "documentation": [
+      {
+        "title": "Doc Title 1",
+        "description": "<div><p>Description</p></div>"
+      }
+    ],
+    "id": "3",
+    "image": "../assets/images/logo.png",
+    "shortdescription": "",
+    "title": "Loan Management",
+    "slug": "loanmanagement",
+    "trialdetails": "100 calls per day",
+    "routerLink": "loanmanagement",
+    "pricing": "KES 10 per submission"
+  },
+  {
+    "description": "A consolidated system to manage all your payment receipts and consolidated reports.",
+    "documentation": [
+      {
+        "title": "Doc Title 1",
+        "description": "<div><p>Description</p></div>"
+      }
+    ],
+    "id": "4",
+    "image": "../assets/images/logo.png",
+    "shortdescription": "",
+    "title": "Receive Payments",
+    "slug": "receivepayments",
+    "trialdetails": "100 calls per day",
+    "routerLink": "receivepayments",
+    "pricing": "1.25% of transaction value"
+  },
+  {
+    "description": "Need the ability to open an account directly from your systems? We have the right system for you.",
+    "documentation": [
+      {
+        "title": "Doc Title 1",
+        "description": "<div><p>Description</p></div>"
+      }
+    ],
+    "id": "",
+    "image": "../assets/images/logo.png",
+    "shortdescription": "",
+    "title": "RegTech",
+    "slug": "regtech",
+    "trialdetails": "5 calls per day",
+    "routerLink": "regtech",
+    "pricing": "KES 250 per verification"
+  },
+  {
+    "description": "Systematically sending money has never been easier than it is now. Use our API to manage all requirements for you.",
+    "documentation": [
+      {
+        "title": "Doc Title 1",
+        "description": "<div><p>Description</p></div>"
+      }
+    ],
+    "id": "",
+    "image": "../assets/images/logo.png",
+    "shortdescription": "",
+    "title": "Send Money",
+    "slug": "sendmoney",
+    "trialdetails": "200 calls per day",
+    "routerLink": "sendmoney",
+    "pricing": "1% per transaction"
+  }
+]

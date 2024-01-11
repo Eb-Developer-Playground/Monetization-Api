@@ -13,8 +13,15 @@ import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
-
-
+import {MatCardModule} from "@angular/material/card";
+import { RouterModule } from '@angular/router';
+import {LeftSidebarComponent} from "./auth/navigation/left-sidebar.component";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import { NavBarComponent } from './auth/nav-bar/nav-bar.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import { LeftNavComponent } from './auth/left-nav/left-nav.component';
+import { RightNavComponent } from './auth/right-nav/right-nav.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -24,10 +31,15 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     AlertComponent,
-    HomeComponent
+    HomeComponent,
+    LeftSidebarComponent,
+    NavBarComponent,
+    LeftNavComponent,
+    RightNavComponent
   ],
   imports: [
     MatInputModule,
+    MatSidenavModule,
     MatButtonModule,
     CommonModule,
     BrowserModule,
@@ -37,13 +49,19 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: createTranslateLoader,
-          deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
       }
-  }),
+    }),
+    RouterModule.forRoot([
+      // Define your routes here for apis
+    ]),
     AppRoutingModule,
-],
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+  ],
 providers: [
   { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
