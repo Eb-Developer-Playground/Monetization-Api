@@ -22,6 +22,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import { LeftNavComponent } from './auth/left-nav/left-nav.component';
 import { RightNavComponent } from './auth/right-nav/right-nav.component';
+import { SideBarComponent } from './auth/side-bar/side-bar.component';
+import { MaterialModule } from './material.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -35,7 +37,8 @@ export function createTranslateLoader(http: HttpClient) {
     LeftSidebarComponent,
     NavBarComponent,
     LeftNavComponent,
-    RightNavComponent
+    RightNavComponent,
+    SideBarComponent
   ],
   imports: [
     MatInputModule,
@@ -46,6 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
