@@ -1,7 +1,41 @@
-﻿<div class="p-4">
-    <div class="container">
-        <h1>Hi {{user?.firstName}}!</h1>
-        <p>Welcome home Cyrus </p>
-        <p><a routerLink="/users">Manage Users</a></p>
-    </div>
+﻿<div>
+  <app-nav-bar></app-nav-bar>
 </div>
+
+<div class="main-content">
+  <br><br>
+  <mat-card class="main-card">
+    <div class="container">
+      <h1>Hi {{user?.firstName}}!</h1>
+      <h1>🎉 Welcome to our developer documentation! 🎉</h1>
+      <p><a routerLink="/users">Manage Users</a></p>
+    </div>
+    <!-- Add the following welcome message to the top of your HTML document -->
+    <div class="developer-welcome">
+      <p>Explore our comprehensive developer documentation designed to assist you in creating the next generation of payment solutions. Our state-of-the-art technology is crafted to revolutionize how merchants manage secure and efficient payment transactions. Leverage our robust and high-speed APIs to streamline your payment processes, ensuring a seamless experience for both merchants and customers.</p>
+      <p>These articles are crafted to guide you through the integration of our solution into your applications, allowing you to focus on scaling your business with confidence.</p>
+    </div>
+  </mat-card>
+
+  <mat-card class="main-card">
+    <!-- From API List -->
+    <div class="cards-container">
+      <!-- Use *ngFor to loop through the API list -->
+      <mat-card *ngFor="let api of apiList" class="responsive-card" (click)="onApiCardClick(api)">
+        <mat-card-header>
+          <mat-card-title>{{ api.title }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="api.image" alt="{{ api.title }}">
+        <mat-card-content>
+          <p>{{ api.shortDescription }}</p>
+          <p>{{ api.trialDetails }}</p>
+          <p>{{ api.routerLink }}</p>
+          <p>{{ api.pricing }}</p>
+        </mat-card-content>
+        <a [routerLink]="['/' + api.routerLink]"><button color="primary" mat-raised-button>Learn More</button></a>
+      </mat-card>
+    </div>
+  </mat-card>
+</div>
+
+<app-left-nav></app-left-nav>
